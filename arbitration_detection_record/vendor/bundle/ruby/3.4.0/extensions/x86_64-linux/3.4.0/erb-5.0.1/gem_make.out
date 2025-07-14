@@ -1,0 +1,18 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/erb-5.0.1/ext/erb/escape
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-gysxmm sitelibdir\=./.gem.20250714-27597-gysxmm clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-gysxmm sitelibdir\=./.gem.20250714-27597-gysxmm
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-gysxmm sitelibdir\=./.gem.20250714-27597-gysxmm install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250714-27597-gysxmm/erb
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-gysxmm sitelibdir\=./.gem.20250714-27597-gysxmm clean

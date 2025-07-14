@@ -1,0 +1,31 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+/usr/bin/ruby extconf.rb
+checking for pkg-config for yaml-0.1... [" ", "", "-lyaml"]
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-dt74wy sitelibdir\=./.gem.20250714-27597-dt74wy clean
+cd libyaml && make clean
+/bin/sh: línea 1: cd: libyaml: No existe el fichero o el directorio
+make: [Makefile:287: clean-so] Error 1 (no tiene efecto)
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-dt74wy sitelibdir\=./.gem.20250714-27597-dt74wy
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-dt74wy sitelibdir\=./.gem.20250714-27597-dt74wy install
+/usr/bin/install -c -m 0755 psych.so ./.gem.20250714-27597-dt74wy
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-dt74wy sitelibdir\=./.gem.20250714-27597-dt74wy clean
+cd libyaml && make clean
+/bin/sh: línea 1: cd: libyaml: No existe el fichero o el directorio
+make: [Makefile:287: clean-so] Error 1 (no tiene efecto)

@@ -1,0 +1,18 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-76q1dv sitelibdir\=./.gem.20250714-27597-76q1dv clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-76q1dv sitelibdir\=./.gem.20250714-27597-76q1dv
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-76q1dv sitelibdir\=./.gem.20250714-27597-76q1dv install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250714-27597-76q1dv/racc
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-76q1dv sitelibdir\=./.gem.20250714-27597-76q1dv clean

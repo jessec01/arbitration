@@ -1,0 +1,18 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-6d5fcv sitelibdir\=./.gem.20250714-27597-6d5fcv clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-6d5fcv sitelibdir\=./.gem.20250714-27597-6d5fcv
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-6d5fcv sitelibdir\=./.gem.20250714-27597-6d5fcv install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20250714-27597-6d5fcv
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-6d5fcv sitelibdir\=./.gem.20250714-27597-6d5fcv clean

@@ -1,0 +1,24 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+/usr/bin/ruby extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with -Werror... yes
+checking for altzone in time.h with -Werror... no
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-bm0cv1 sitelibdir\=./.gem.20250714-27597-bm0cv1 clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-bm0cv1 sitelibdir\=./.gem.20250714-27597-bm0cv1
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-bm0cv1 sitelibdir\=./.gem.20250714-27597-bm0cv1 install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20250714-27597-bm0cv1
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-bm0cv1 sitelibdir\=./.gem.20250714-27597-bm0cv1 clean

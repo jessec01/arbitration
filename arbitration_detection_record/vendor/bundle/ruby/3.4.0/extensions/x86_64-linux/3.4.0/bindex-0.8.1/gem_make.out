@@ -1,0 +1,18 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-mzqzib sitelibdir\=./.gem.20250714-27597-mzqzib clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-mzqzib sitelibdir\=./.gem.20250714-27597-mzqzib
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-mzqzib sitelibdir\=./.gem.20250714-27597-mzqzib install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20250714-27597-mzqzib/skiptrace/internal
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250714-27597-mzqzib sitelibdir\=./.gem.20250714-27597-mzqzib clean
