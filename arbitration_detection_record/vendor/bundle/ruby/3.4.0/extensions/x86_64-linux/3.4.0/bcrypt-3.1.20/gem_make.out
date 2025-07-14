@@ -1,0 +1,25 @@
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bcrypt-3.1.20/ext/mri
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20250714-5612-4vx6wu sitelibdir\=./.gem.20250714-5612-4vx6wu clean
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20250714-5612-4vx6wu sitelibdir\=./.gem.20250714-5612-4vx6wu
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+gcc  -D__SKIP_GNU     -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+wrapper.c:182:60: aviso: ‘struct crypt_data’ declarado dentro de la list de parámetros no será visible fuera de esta definición o declaración
+  182 | char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
+      |                                                            ^~~~~~~~~~
+linking shared-object bcrypt_ext.so
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20250714-5612-4vx6wu sitelibdir\=./.gem.20250714-5612-4vx6wu install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20250714-5612-4vx6wu
+
+current directory: /home/jessec/Documentos/arbitration/arbitration_detection_record/vendor/bundle/ruby/3.4.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20250714-5612-4vx6wu sitelibdir\=./.gem.20250714-5612-4vx6wu clean
