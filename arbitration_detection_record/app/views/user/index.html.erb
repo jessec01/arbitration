@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Create an account</h1>
+            <p class="description">Enter your details below to create your account</p>
+            
+            <!-- The form action would normally point to your backend service -->
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                    <span class="hint">Password must be at least 8 characters</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+                    
+                </div>
+                
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+            
+            <div class="footer">
+                <a href="#">Already have an account? Sign in</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
