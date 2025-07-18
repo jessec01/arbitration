@@ -9,43 +9,49 @@
 </head>
 <body>
     <div class="container">
-        <div class="form-container">
-            <h1>Create an account</h1>
-            <p class="description">Enter your details below to create your account</p>
+        <div class="container__form">
+            <h1 class="container__form-title">Create an account</h1>
+            <p  class="container__form-description">Enter your details below to create your account</p>
             
             <!-- The form action would normally point to your backend service -->
-            <form class="form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    <span class="form-error-name" name="errror-name"> </span>
+            <form class="container__form" action="#" method="POST">
+                <div class="container__form-group">
+                    <label class="container__form-group-label" for="name">Full Name</label>
+                    <input type="text" class="container__form-group-input" name="name" placeholder="John Doe" required>
+                    <div class="container__form-group-error--name"> 
+                        <span class="container__form-group-error--name-span" name="error-name"> </span>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                    <span class="form-error-email" name="errror-email"> </span> 
+                <div class="container__form-group">
+                    <label class="container__form-group-label" for="email">Email</label>
+                    <input class="container__form-group-input" type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <div class="container__form-group-error--email">
+                        <span class="container__form-group-error-span--email-span"name="error-email"> </span>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="********" required>
-                    <span class="form-error-password" name="errror-password"> 
+                <div class="container__form-group">
+                    <label class="container__form-group-label" for="password">Password</label>
+                    <input class="container__form-group-input" type="password" id="password" name="password" placeholder="********" required>
+                    <div class="container__form-group-error--password"> 
+                    </div>
+                    <span class="container__form-group-error--password-span" name="errror-password"> 
                     </span>
                 </div>
-                
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
-                    <span class="form-error-confirm-password" name="errror-confirm-password"> </span>
+                <div class="container__form-group">
+                    <label class="container__form-group-label" for="confirm-password">Confirm Password</label>
+                    <input class="container__form-group-input" type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+                    <div class="container__form-group-error--confirm-password">
+                    <span class="container__form-group-error--confirmation-span" name="errror-confirm-password"> 
+                    </span>
                     
                 </div>
                 
-                <button type="submit" class="submit-button">Register</button>
+                <button class="container__form-button" type="submit" class="submit-button">Register</button>
             </form>
             
-            <div class="footer">
-                <a href="#">Already have an account? Sign in</a>
+            <div class="container__footer">
+                <a class ="container__footer-link" href="#">Already have an account? Sign in</a>
             </div>
         </div>
     </div>
