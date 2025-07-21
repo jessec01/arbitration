@@ -1,4 +1,4 @@
-//accede y lee datos del DOM
+// Handles errors using a message class with a unique identifier, an associated message, and the associated span.
 class MessageError{
     constructor(id,message,name_span){
         this.id=id;
@@ -7,29 +7,24 @@ class MessageError{
         
     }
 }
+// An array of messages is defined to store a flexible array of objects for defining new dynamic spans.
 const message_error=[];
-message_error.push(new MessageError(1,"El campo no puede estar en blanco.","error-name"));
-message_error.push(new MessageError(2,"Nombre invalido.","error-name"));
-message_error.push(new MessageError(3,"Email invalido","error-email"));
-message_error.push(new MessageError(4,"Password invalido.","error-password")); // Para espacio en blanco
-message_error.push(new MessageError(5,"El password debe tener un minimo de 8 caracteres.","error-password"));
-message_error.push(new MessageError(6,"Password invalido debe tener minimo:(1)Mayuscula A, (1)minimuscula a, (.)caracter especial .","error-password"));
-// CORRECCIÓN: Apunta al span correcto para el error de confirmación de contraseña
-message_error.push(new MessageError(7,"El password no coincide","error-confirm-password"));
-// NUEVO: Mensajes de error para el teléfono
-message_error.push(new MessageError(8,"Número de teléfono inválido.","error-phone"));
-message_error.push(new MessageError(9,"El campo de teléfono no puede estar en blanco.","error-phone"));
-
-
-let maperror; // Esta variable ya no se usará directamente para la visualización de errores
-const array_id=[]; // Se mantiene pero no se usa directamente para la visualización de errores
-// Aumentado el tamaño de array_boolean para incluir la validación del teléfono
-// Ahora son 9 posibles errores (0-8)
-const array_boolean=[false,false,false,false,false,false,false,false,false]; // Se mantiene y se reinicia
-
+message_error.push(new MessageError(1,"The field cannot be blank.","error-name"));
+message_error.push(new MessageError(2,"Invalid name.","error-name"));
+message_error.push(new MessageError(3,"Invalid email","error-email"));
+message_error.push(new MessageError(4,"Invalid password.","error-password")); // For blank space
+message_error.push(new MessageError(5,"The password must be at least 8 characters long.","error-password"));
+message_error.push(new MessageError(6,"Invalid password must have at least: (1)Uppercase A, (1)lowercase a, (.)special character .","error-password"));
+message_error.push(new MessageError(7,"The password does not match","error-confirm-password"));
+message_error.push(new MessageError(8,"Invalid phone number.","error-phone"));
+message_error.push(new MessageError(9,"The phone field cannot be blank.","error-phone"));
+const array_id=[]; // Associates the identifier of each error message
+const array_boolean=[false,false,false,false,false,false,false,false,false]; // Handles error states
 function ready_data_information(){
     const value_date=[];
     const name_date=[];
+    // The logic to access DOM fields was reduced
+    // by accessing with document.querySelectorALL 
     const container= document.querySelectorAll('input');
     const containerselect=document.querySelectorAll('select');
     const arraycontainer=[];
@@ -37,7 +32,7 @@ function ready_data_information(){
         arraycontainer.push(container[i]);
     }
     arraycontainer.push(containerselect);
-
+    // Defines keys and values for the form input map
     for (let i = 0; i < arraycontainer.length-1; i++) {
         name_date[i]=arraycontainer[i].name;
         value_date[i]=arraycontainer[i].value;
@@ -46,35 +41,27 @@ function ready_data_information(){
     for (let i=0;i<value_date.length;i++){
         arraydate.push([name_date[i],value_date[i]]);
    }
-    //Creo un mapa con el nombre y valor del input para validarlo
+    // Creates a map with the input name and value for validation
     let mapinput=new Map(arraydate);
-    //console.log(mapinput);
     return mapinput;
 }
-
 function validate_data(){
-    // CORRECCIÓN CRÍTICA: Reiniciar array_boolean al inicio de la validación
-    // Esto asegura que solo los errores actuales se reflejen, borrando los errores de intentos anteriores.
+    // This allows resetting error states
     for(let i = 0; i < array_boolean.length; i++) {
         array_boolean[i] = false;
     }
-    // También es buena práctica limpiar array_id si se usa para algo más que solo la asignación
     for(let i = 0; i < array_id.length; i++) {
-        array_id[i] = undefined; // O un valor por defecto si lo necesitas
+        array_id[i] = undefined; 
     }
-
-
     let mapdata=ready_data_information();
-    var is_data_valid=true; // Variable para rastrear la validez general
-
-    // Validaciones existentes
+    var is_data_valid=true; // Variable to track overall validity
+    // Existing validations
     if (!validate_name(mapdata.get("name"))){
         is_data_valid=false;
     }
     if (!validate_email(mapdata.get("email"))){
         is_data_valid=false;
     }
-    // NUEVO: Validación del teléfono
     if (!validate_phone(mapdata.get("phone"))){
         is_data_valid=false;
     }
@@ -86,28 +73,23 @@ function validate_data(){
     }
     return is_data_valid;
 }
-
 function validate_name(name){
-    let namenew=name.trim(); // Usar let para declarar la variable
-    if(namenew===""){ // Usar === para comparación estricta
+    let namenew=name.trim();
+    if(namenew===""){ 
         array_id[0]=1;
         array_boolean[0]=true;
         return false;
     }
-    else if(namenew.length===1){ // Usar ===
+    else if(namenew.length===1){ 
         array_id[1]=2;
         array_boolean[1]=true;
         return false;
     }
-    return true; // Importante retornar true si es válido
+    return true; 
 }
-
 function validate_email(email){
-    // Expresión regular para la validación de email (RFC 5322 compatible)
-    // Esta es una expresión regular robusta que cubre la mayoría de los casos válidos
+    // Regular expression to reinforce correct email handling with greater precision for incorrect cases
     const emailRegex = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-
-    // El método .test() de la expresión regular devuelve true si la cadena coincide con el patrón
     if (!emailRegex.test(email)){
         console.log(emailRegex.test(email));
         array_id[2]=3;
@@ -116,44 +98,34 @@ function validate_email(email){
     }
     return true;
 }
-
-// NUEVO: Función para validar el teléfono
 function validate_phone(phone) {
     console.log(phone);
     let phonenew = phone.trim();
 
     if (phonenew === "") {
-        array_id[8] = 9; // ID del mensaje "El campo de teléfono no puede estar en blanco."
+        array_id[8] = 9; 
         array_boolean[8] = true;
         return false;
     }
-
-    // Expresión regular para validar números de teléfono (ejemplo básico, puede ser más complejo)
-    // Permite dígitos, espacios, guiones, paréntesis y un signo '+' inicial opcional.
-    // Asegura al menos 7 dígitos.
-    const phoneRegex = new RegExp(/^\+?[0-9\s\-\(\)]{7,20}$/); 
-
+    // Regular expression that validates the phone number format
+    const phoneRegex = new RegExp(/^[0-9]{7}$/); 
     if (!phoneRegex.test(phonenew)) {
-        array_id[7] = 8; // ID del mensaje "Número de teléfono inválido."
+        array_id[7] = 8; 
         array_boolean[7] = true;
         return false;
     }
     return true;
 }
-
-
 function validate_password(password_A,password_B){
-    if (password_A!==password_B){ // Usar !== para comparación estricta
+    if (password_A!==password_B){ 
         array_id[6]=7;
         array_boolean[6]=true;
         return false;
     }
     return true;
 }
-
 function validate_password_timenow(password){
     if (validate_space(password)){
-        // CORRECCIÓN: Se eliminó el alert(). El mensaje se mostrará en el span.
         array_id[3]=4;
         array_boolean[3]=true;
         return false;
@@ -163,6 +135,7 @@ function validate_password_timenow(password){
         array_boolean[4]=true;
         return false;
     }
+    // Regular expression that validates the password format
     const password_good=new RegExp(/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).+$/);
     if (!password_good.test(password)){
         array_id[5]=6;
@@ -171,66 +144,60 @@ function validate_password_timenow(password){
     }
     return true;
 }
-
 function validate_space(str){
     if(str.includes(' ')){
         return true;
     }
     return false;
 }
-
-//se activa cuando la pagina esta cargada
+// Activates when the page is loaded
 document.addEventListener("turbo:load", () => {
    
-    // 1. Selecciona el PRIMER elemento que tenga la clase "form".
-    // querySelector es más directo y seguro para este caso.
+    // 1. Selects the FIRST element that has the class "form".
+    // querySelector is more direct and safer for this case.
     const form = document.querySelector(".container__form");
     
-    // 2. Si el formulario realmente existe en la página...
+    // 2. If the form actually exists on the page...
     if (form) {
-        // 3. ...adjunta el listener al evento "submit" DEL FORMULARIO.
+        // 3. ...attaches the listener to the "submit" event OF THE FORM.
         form.addEventListener("submit", (event) => {
-            console.log("El formulario está intentando enviarse...");
-
-            // Siempre previene el envío por defecto para manejar la validación
+            console.log("The form is attempting to submit...");
+            // Always prevent default submission to handle validation
             event.preventDefault(); 
-
-            // 1. Limpia todos los mensajes de error existentes antes de validar de nuevo
-            // Selecciona todos los spans que tienen un atributo 'name' que comienza con 'error-'
+            // 1. Clear all existing error messages before re-validating
+            // Select all spans that have a 'name' attribute starting with 'error-'
             document.querySelectorAll('span[name^="error-"]').forEach(span => {
-                span.textContent = ""; // Borra el contenido del span
+                span.textContent = ""; // Clears the content of the span
             });
 
-            // 2. Llama a la función de validación. Esta actualizará el array_boolean global.
+            // 2. Call the validation function. This will update the global array_boolean.
             const is_form_valid = validate_data(); 
-
-            // 3. Itera sobre tus mensajes de error y el array_boolean para mostrar los errores activos
+            // 3. Iterate over your error messages and the array_boolean to display active errors
             if (!is_form_valid) {
-                console.log("La validación falló. Mostrando errores...");
+                console.log("Validation failed. Displaying errors...");
                 for (let i = 0; i < message_error.length; i++) {
-                    // Si el booleano en la posición 'i' es true, significa que el error 'i' está activo
+                    // If the boolean at position 'i' is true, it means error 'i' is active
                     if (array_boolean[i]) {
                         const errorInfo = message_error[i];
-                        // Busca el span por su atributo 'name'
+                        // Find the span by its 'name' attribute
                         const targetSpan = document.getElementsByName(errorInfo.name_span)[0];
                         if (targetSpan) {
                             targetSpan.textContent = errorInfo.message;
                         } else {
-                            console.warn(`Advertencia: No se encontró el span con name="${errorInfo.name_span}" para el error: ${errorInfo.message}`);
+                            console.warn(`Warning: No span with name="${errorInfo.name_span}" found for error: ${errorInfo.message}`);
                         }
                     }
                 }
             } else {
-                console.log("La validación fue exitosa. El formulario se enviará (simulado).");
-                // Aquí podrías enviar el formulario si la validación es exitosa
-                // form.submit(); // Descomentar para enviar el formulario real
+                console.log("Validation was successful. The form will be submitted (simulated).");
+                // Here you could submit the form if validation is successful
+                // form.submit(); // Uncomment to submit the real form
             }
         });
     } else {
-        // Un mensaje útil si el script no pudo encontrar el formulario.
-        console.error("El script de validación no pudo encontrar el formulario con la clase '.container__form'");
+        // A helpful message if the script could not find the form.
+        console.error("The validation script could not find the form with the class '.container__form'");
     }
 });
-
 
 
