@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+</head>
+<body>
+    <div class="container">
+        <div class="container__form">
+            <h1 class="container__form-h1">Create an account</h1>
+            <p  class="container__form-p">Enter your details below to create your account</p>
+            
+            <!-- The form action would normally point to your backend service -->
+            <form class="container__form" action="#" method="POST">
+                <div class="container__form-group">
+                    <label for="email">Email</label>
+                    <input  type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <div class="container__form-group-error--email">
+                        <span class="container__form-group-error-span--email-span"name="error-email"> </span>
+                    </div>
+                </div>
+                <div class="container__form-group">
+                    <label  for="password">Password</label>
+                    <input  type="password" id="password" name="password" placeholder="********" required>
+                    <div class="container__form-group-error--password"> 
+                    </div>
+                    <span class="container__form-group-error--password-span" name="error-password"> 
+                    </span>
+                <button class="container__form-button" type="submit" class="submit-button">Login</button>
+            </form>
+            <div class="container__footer">
+                <a class ="container__footer-link" href="#">Already have an account? Sign in</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

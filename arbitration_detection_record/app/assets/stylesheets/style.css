@@ -1,9 +1,9 @@
-/* Global styles */
+/* Estilos Globales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -18,35 +18,40 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    
 }
 
-.form-container {
+.container__form {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 450px;
     padding: 32px;
+
 }
 
-h1 {
+/* Corregido: Selectores para coincidir con el HTML */
+.container__form-h1 {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.description {
+/* Corregido: Selectores para coincidir con el HTML */
+.container__form-p {
     text-align: center;
     color: #6b7280;
     margin-bottom: 24px;
 }
 
-.form-group {
+.container__form-group {
     margin-bottom: 20px;
 }
 
-label {
+/* Corregido: Apuntando a la etiqueta 'label' dentro de '.container__form-group' */
+.container__form-group label {
     display: block;
     font-size: 14px;
     font-weight: 500;
@@ -54,7 +59,12 @@ label {
     color: #374151;
 }
 
-input {
+/* **CORRECCIÓN CLAVE:** Incluye input[type="tel"] y select en los estilos básicos */
+.container__form-group input[type="text"],
+.container__form-group input[type="email"],
+.container__form-group input[type="password"],
+.container__form-group input[type="tel"], /* <--- AÑADIDO: Incluye el input de teléfono */
+.container__form-group select { /* <--- AÑADIDO: Incluye el selector */
     width: 100%;
     padding: 10px 12px;
     border: 1px solid #d1d5db;
@@ -63,20 +73,41 @@ input {
     transition: border-color 0.15s ease;
 }
 
-input:focus {
+/* **CORRECCIÓN CLAVE:** Incluye input[type="tel"] y select en los estilos de foco */
+.container__form-group input[type="text"]:focus,
+.container__form-group input[type="email"]:focus,
+.container__form-group input[type="password"]:focus,
+.container__form-group input[type="tel"]:focus, /* <--- AÑADIDO: Incluye el input de teléfono en foco */
+.container__form-group select:focus { /* <--- AÑADIDO: Incluye el selector en foco */
     outline: none;
     border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
-.hint {
-    display: block;
-    font-size: 12px;
-    color: #6b7280;
+/* **CORRECCIÓN CLAVE:** Comas faltantes para incluir correctamente todos los divs de error */
+.container__form-group-error--name,
+.container__form-group-error--email,
+.container__form-group-error--password,
+.container__form-group-error--confirm-password, /* <--- COMA AÑADIDA */
+.container__form-group-error--phone { /* <--- ESTE YA ESTABA PERO NECESITABA LA COMA ANTERIOR */
     margin-top: 4px;
+    min-height: 18px; /* Asegura un espaciado consistente */
 }
 
-.submit-button {
+/* **CORRECCIÓN CLAVE:** Comas faltantes y selector corregido para el span de error del teléfono */
+.container__form-group-error--name-span,
+.container__form-group-error-span--email-span,
+.container__form-group-error--password-span,
+.container__form-group-error--confirmation-span, /* <--- COMA AÑADIDA */
+.container__form-group-error-span--phone-span { /* <--- CORREGIDO: El selector debe coincidir con la clase exacta en el HTML */
+    display: block;
+    font-size: 12px;
+    color: #e53e3e;
+    margin-top: 2px;
+}
+
+/* Corregido: Solo una clase para el botón */
+.container__form-button {
     width: 100%;
     background-color: #4f46e5;
     color: white;
@@ -89,36 +120,38 @@ input:focus {
     transition: background-color 0.15s ease;
 }
 
-.submit-button:hover {
+.container__form-button:hover {
     background-color: #4338ca;
 }
 
-.footer {
+.container__footer {
     margin-top: 24px;
     text-align: center;
 }
 
-.footer a {
+.container__footer-link {
     color: #4f46e5;
     text-decoration: none;
     font-size: 14px;
 }
 
-.footer a:hover {
+.container__footer-link:hover {
     text-decoration: underline;
 }
 
-/* Responsive styles */
+/* Estilos Responsivos */
 @media (max-width: 480px) {
-    .form-container {
+    .container__form {
         padding: 24px;
     }
 
-    h1 {
+    /* Corregido: Selector para coincidir con el HTML */
+    .container__form-h1 {
         font-size: 22px;
     }
-    
-    .submit-button {
+
+    /* Corregido: Solo una clase para el botón */
+    .container__form-button {
         padding: 10px;
     }
 }
