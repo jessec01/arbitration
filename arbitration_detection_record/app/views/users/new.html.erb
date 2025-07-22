@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,8 @@
                 <input type="hidden" name="authenticity_token" value="..." autocomplete="off">
                 <div class="container__form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <!-- CAMBIO: name="users[name]" -->
+                    <input type="text" id="name" name="users[name]" placeholder="John Doe" required>
                     <div class="container__form-group-error--name"> 
                         <span class="container__form-group-error--name-span" name="error-name"> </span>
                     </div>
@@ -26,28 +27,32 @@
                 
                 <div class="container__form-group">
                     <label for="email">Email</label>
-                    <input  type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <!-- CAMBIO: name="users[email]" -->
+                    <input  type="email" id="email" name="users[email]" placeholder="john@example.com" required>
                     <div class="container__form-group-error--email">
                         <span class="container__form-group-error-span--email-span"name="error-email"> </span>
                     </div>
                 </div>
                 <div class="container__form-group">
                     <label for="phone">Phone</label>
-                    <select name="select" id="select" >
+                    <!-- CAMBIO: name="users[select]" -->
+                    <select name="users[select]" id="select" >
                     <option value="0424">0424</option>
                     <option value="0414" selected>0414</option>
                     <option value="0412" selected>0412</option>
                     <option value="0416">0416</option>
                     <option value="0426">0426</option>
                     </select>
-                    <input  type="tel" id="phone" name="phone" placeholder="XXXXXXX" required>
+                    <!-- CAMBIO: name="users[phone]" -->
+                    <input  type="tel" id="phone" name="users[phone]" placeholder="XXXXXXX" required>
                     <div class="container__form-group-error--phone">
                         <span class="container__form-group-error-span--phone-span"name="error-phone"> </span>
                     </div>
                 </div>
                 <div class="container__form-group">
                     <label  for="password">Password</label>
-                    <input  type="password" id="password" name="password" placeholder="********" required>
+                    <!-- CAMBIO: name="users[password]" -->
+                    <input  type="password" id="password" name="users[password]" placeholder="********" required>
                     <div class="container__form-group-error--password"> 
                     </div>
                     <span class="container__form-group-error--password-span" name="error-password"> 
@@ -55,7 +60,8 @@
                 </div>
                 <div class="container__form-group">
                     <label  for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+                    <!-- CAMBIO: name="users[confirm_password]" (usando guion bajo para consistencia con Ruby) -->
+                    <input type="password" id="confirm-password" name="users[confirm_password]" placeholder="********" required>
                     <div class="container__form-group-error--confirm-password">
                     <span class="container__form-group-error--confirmation-span" name="error-confirm-password"> 
                     </span>
@@ -66,7 +72,7 @@
             </form>
             
             <div class="container__footer">
-                <a class ="container__footer-link" href="">Already have an account? Sign in</a>
+                <a class ="container__footer-link" href="<%= login_path %>">Already have an account? Sign in</a>
             </div>
         </div>
     </div>
